@@ -1,13 +1,9 @@
 
-%include /usr/lib/rpm/macros.python
+%include	/usr/lib/rpm/macros.python
 %define	pname	medusa
 
-%define py_ver         2.3
-%define py_prefix      %{_prefix}
-%define py_scriptdir   %{py_prefix}/share/python%{py_ver}
-%define py_sitescriptdir %{py_scriptdir}/site-packages
-
-Summary:	Framework for writing asynchronous socket-based servers.
+Summary:	Framework for writing asynchronous socket-based servers
+Summary(pl):	Szkielet do pisania asynchronicznych serwerów opartych na gniazdach
 Name:		python-%{pname}
 Version:	0.5.4
 Release:	1
@@ -23,10 +19,17 @@ BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Medusa is an architecture for very-high-performance TCP/IP servers 
-(like HTTP, FTP, and SMTP). Medusa is different from most other servers 
-because it runs as a single process, multiplexing I/O with its various 
-client and server connections within a single process/thread.
+Medusa is an architecture for very-high-performance TCP/IP servers
+(like HTTP, FTP, and SMTP). Medusa is different from most other
+servers because it runs as a single process, multiplexing I/O with its
+various client and server connections within a single process/thread.
+
+%description -l pl
+Medusa to architektura dla bardzo wysoko wydajnych serwerów TCP/IP
+(jak HTTP, FTP czy SMTP). Medusa od wiêkszo¶ci innych serwerów ró¿ni
+siê tym, ¿e dzia³a jako pojedynczy proces, zwielokrotniaj±cy
+wej¶cie/wyj¶cie na ró¿ne po³±czenia klientów i serwerów z poziomu
+jednego procesu/w±tku.
 
 %prep
 %setup -q -n %{pname}-%{version}
@@ -36,13 +39,15 @@ env CFLAGS="%{rpmcflags}" python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python -- setup.py install --root=$RPM_BUILD_ROOT --optimize=2
 
+python -- setup.py install \
+	--root=$RPM_BUILD_ROOT \
+	--optimize=2
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.txt TODO.txt CHANGES.txt LICENSE.txt docs 
+%doc README.txt TODO.txt CHANGES.txt LICENSE.txt docs
 %{py_sitescriptdir}/%{pname}
