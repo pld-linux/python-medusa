@@ -1,5 +1,4 @@
 
-%include	/usr/lib/rpm/macros.python
 %define		module	medusa
 
 Summary:	Framework for writing asynchronous socket-based servers
