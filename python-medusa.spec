@@ -1,21 +1,22 @@
 
 %include	/usr/lib/rpm/macros.python
-%define	pname	medusa
+%define		module	medusa
 
 Summary:	Framework for writing asynchronous socket-based servers
 Summary(pl):	Szkielet do pisania asynchronicznych serwerów opartych na gniazdach
-Name:		python-%{pname}
+Name:		python-%{module}
 Version:	0.5.4
 Release:	1
 License:	BSD-like (see LICENSE.txt)
 Vendor:		Robin Dunn <robin@alldunn.com>
 Group:		Development/Languages/Python
-Source0:	http://www.amk.ca/files/python/%{pname}-%{version}.tar.gz
+Source0:	http://www.amk.ca/files/python/%{module}-%{version}.tar.gz
 # Source0-md5:	5d10505036bc38f8d4cb51d87516e069
 URL:		http://www.amk.ca/python/code/medusa.html
 BuildRequires:	python-devel >= 2.3
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,7 +33,7 @@ wej¶cie/wyj¶cie na ró¿ne po³±czenia klientów i serwerów z poziomu
 jednego procesu/w±tku.
 
 %prep
-%setup -q -n %{pname}-%{version}
+%setup -q -n %{module}-%{version}
 
 %build
 env CFLAGS="%{rpmcflags}" python setup.py build
@@ -44,10 +45,12 @@ python -- setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 
+find $RPM_BUILD_ROOT%{py_sitescriptdir} -name \*.py | xargs rm -f
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc README.txt TODO.txt CHANGES.txt LICENSE.txt docs
-%{py_sitescriptdir}/%{pname}
+%{py_sitescriptdir}/%{module}
