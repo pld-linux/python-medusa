@@ -7,7 +7,7 @@ Summary(pl):	Szkielet do pisania asynchronicznych serwerów opartych na gniazdach
 Name:		python-%{pname}
 Version:	0.5.4
 Release:	1
-License:	UNKNOWN
+License:	BSD-like (see LICENSE.txt)
 Vendor:		Robin Dunn <robin@alldunn.com>
 Group:		Development/Languages/Python
 Source0:	http://www.amk.ca/files/python/%{pname}-%{version}.tar.gz
