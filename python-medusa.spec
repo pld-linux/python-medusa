@@ -5,7 +5,7 @@ Summary:	Framework for writing asynchronous socket-based servers
 Summary(pl):	Szkielet do pisania asynchronicznych serwerów opartych na gniazdach
 Name:		python-%{module}
 Version:	0.5.4
-Release:	1
+Release:	2
 License:	BSD-like (see LICENSE.txt)
 Vendor:		Robin Dunn <robin@alldunn.com>
 Group:		Development/Languages/Python
