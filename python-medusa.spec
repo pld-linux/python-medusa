@@ -13,7 +13,6 @@ Source0:	http://www.amk.ca/files/python/%{module}-%{version}.tar.gz
 # Source0-md5:	5d10505036bc38f8d4cb51d87516e069
 URL:		http://www.amk.ca/python/code/medusa.html
 BuildRequires:	python-devel >= 1:2.3
-BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
