@@ -2,7 +2,7 @@
 %define		module	medusa
 
 Summary:	Framework for writing asynchronous socket-based servers
-Summary(pl):	Szkielet do pisania asynchronicznych serwerów opartych na gniazdach
+Summary(pl.UTF-8):   Szkielet do pisania asynchronicznych serwerÃ³w opartych na gniazdach
 Name:		python-%{module}
 Version:	0.5.4
 Release:	3
@@ -23,12 +23,12 @@ Medusa is an architecture for very-high-performance TCP/IP servers
 servers because it runs as a single process, multiplexing I/O with its
 various client and server connections within a single process/thread.
 
-%description -l pl
-Medusa to architektura dla bardzo wysoko wydajnych serwerów TCP/IP
-(jak HTTP, FTP czy SMTP). Medusa od wiêkszo¶ci innych serwerów ró¿ni
-siê tym, ¿e dzia³a jako pojedynczy proces, zwielokrotniaj±cy
-wej¶cie/wyj¶cie na ró¿ne po³±czenia klientów i serwerów z poziomu
-jednego procesu/w±tku.
+%description -l pl.UTF-8
+Medusa to architektura dla bardzo wysoko wydajnych serwerÃ³w TCP/IP
+(jak HTTP, FTP czy SMTP). Medusa od wiÄ™kszoÅ›ci innych serwerÃ³w rÃ³Å¼ni
+siÄ™ tym, Å¼e dziaÅ‚a jako pojedynczy proces, zwielokrotniajÄ…cy
+wejÅ›cie/wyjÅ›cie na rÃ³Å¼ne poÅ‚Ä…czenia klientÃ³w i serwerÃ³w z poziomu
+jednego procesu/wÄ…tku.
 
 %prep
 %setup -q -n %{module}-%{version}
