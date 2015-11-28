@@ -3,7 +3,7 @@ Summary:	Framework for writing asynchronous socket-based servers
 Summary(pl.UTF-8):	Szkielet do pisania asynchronicznych serwerów opartych na gniazdach
 Name:		python-%{module}
 Version:	0.5.4
-Release:	6
+Release:	7
 License:	BSD-like (see LICENSE.txt)
 Group:		Development/Languages/Python
 Source0:	https://pypi.python.org/packages/source/m/medusa/%{module}-%{version}.tar.gz
